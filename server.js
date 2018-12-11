@@ -1,6 +1,7 @@
 // Import express and path modules.
 var express = require( "express");
 var path = require( "path");
+var mongodb = require('mongodb');
 const bodyParser = require('body-parser');
 const session = require('express-session')({
     secret: 'secret'
@@ -17,8 +18,8 @@ app.set('views', path.join(__dirname, './client/views'));
 app.set('view engine', 'ejs');
 
 // Start Node server listening on port 8000.
-var server = app.listen(port, function() {
- console.log(`listening on port ${port}`);
+var server = app.listen(port, () => {
+    console.log("listening on port: ", port);
 });
 // require the mongoose configuration file which does the rest for us
 require('./server/config/mongoose.js');
