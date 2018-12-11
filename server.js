@@ -7,8 +7,7 @@ const session = require('express-session')({
 });
 // Create the express app.
 var app = express();
-const port = process.env.PORT || 3000;
-app.listen(port);
+const port = process.env.PORT || 8000;
 // Define the static folder.
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "./client/static")));
